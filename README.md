@@ -1,26 +1,59 @@
-# Hidden Gem Trip Weaver
+# Tripora AI — Smart Travel Assistant
 
-Build a modern AI Travel Assistant that creates personalized itineraries, discovers hidden gems, recommends hotels, restaurants, transport, and attractions based on budget and preferences. Include secure login/signup, interactive maps, real-time weather, estimated trip costs, day-wise itineraries, booking links, and a beautiful responsive UI with a working backend and database.
+Plan smarter. Explore deeper. Travel better.
 
-This project was built with [Lovable](https://lovable.dev).
+Tripora AI is a personalized travel-planning web application designed to help travelers discover hidden gems, explore destinations, and organize trips based on their interests, travel dates, and budget.
 
-**Live app**: https://hidden-gem-trip-weaver.lovable.app
+## Live Demo
 
-## Build with Lovable
+**Live App:** https://hidden-gem-trip-weaver.lovable.app
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/cecdaab3-f1e0-4c23-980c-801f384fdcf9).
+## Features
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+- Personalized trip planning and day-wise itineraries
+- Hidden-gem and tourist destination discovery
+- Hotel, restaurant, transport, and attraction recommendations
+- Budget estimation and expense planning
+- Interactive maps and destination exploration
+- Weather information and useful travel resources
+- Booking links and responsive user interface
+- Authentication and saved trips (as implemented)
 
-## Development
+## Tech Stack
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+Update this section to match the technologies actually used in the project.
 
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+- Frontend: React / TypeScript (if used)
+- Styling: Tailwind CSS (if used)
+- Backend and database: Add the actual provider when configured
+- Maps and weather: Add the providers when integrated
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js
+- npm
+
+### Run Locally
+
+```bash
+git clone YOUR_GITHUB_REPOSITORY_URL
+cd YOUR_REPOSITORY_NAME
+npm install
 npm run dev
 ```
+
+Open the local URL shown in your terminal.
+
+## Project Status
+
+Tripora AI is under active development. Features requiring external APIs, authentication, or persistent database storage may need additional configuration.
+
+## Deployment
+
+The application is currently published at the live demo link above. Further deployment and hosting configuration can be documented as the project evolves.
+
+## Author
+
+Developed as an independent AI-powered travel-planning project.
