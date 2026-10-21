@@ -73,6 +73,8 @@ function TripPage() {
       plan?.days[day]?.segments.map((s) => ({
         lat: s.latitude, lng: s.longitude, label: s.place || s.title,
         kind: s.is_hidden_gem ? "gem" : s.category === "hotel" ? "hotel" : s.category,
+        subtitle: `${s.time[0]!.toUpperCase()}${s.time.slice(1)} · Day ${day + 1}`,
+        details: s.description,
       })) ?? [],
     [plan, day],
   );
@@ -81,9 +83,9 @@ function TripPage() {
     () =>
       plan
         ? [
-            ...plan.hotels.map((h) => ({ lat: h.latitude, lng: h.longitude, label: h.name, kind: "hotel" as const })),
-            ...plan.restaurants.map((r) => ({ lat: r.latitude, lng: r.longitude, label: r.name, kind: "food" as const })),
-            ...plan.hidden_gems.map((g) => ({ lat: g.latitude, lng: g.longitude, label: g.name, kind: "gem" as const })),
+            ...plan.hotels.map((h) => ({ lat: h.latitude, lng: h.longitude, label: h.name, kind: "hotel" as const, subtitle: `${h.type} · ${h.area}`, details: h.amenities.slice(0, 4).join(", ") })),
+            ...plan.restaurants.map((r) => ({ lat: r.latitude, lng: r.longitude, label: r.name, kind: "food" as const, subtitle: `${r.cuisine} · ${r.price_level}`, details: r.description })),
+            ...plan.hidden_gems.map((g) => ({ lat: g.latitude, lng: g.longitude, label: g.name, kind: "gem" as const, details: g.description })),
           ]
         : [],
     [plan],
