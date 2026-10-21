@@ -18,7 +18,7 @@ const tripInput = z.object({
 
 export const createTrip = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
-  .inputValidator((d: TripInput) => tripInput.parse(d))
+  .validator((d: TripInput) => tripInput.parse(d))
   .handler(async ({ data, context }) => {
     const days = (new Date(data.end_date).getTime() - new Date(data.start_date).getTime()) / 86400000 + 1;
     if (days < 1 || days > 21) throw new Error("Trips must be between 1 and 21 days.");
@@ -49,7 +49,7 @@ export const createTrip = createServerFn({ method: "POST" })
 
 export const refineTrip = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
-  .inputValidator((d: { id: string; instruction: string }) =>
+  .validator((d: { id: string; instruction: string }) =>
     z.object({ id: z.string().uuid(), instruction: z.string().trim().min(3).max(500) }).parse(d),
   )
   .handler(async ({ data, context }) => {
